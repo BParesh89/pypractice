@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}EditProfile{% endblock %}
+
+{% block content %}
+<h2>Edit Profile </h2>
+<div>
+    <p>Your account details are below:</p>
+    			<form action="{{ url_for('editprofile') }}" method="get" autocomplete="off">
+                <table>
+                    <tr>
+                        <td>Username:</td>
+                        <td>{{ username }}</td>
+                    </tr>
+                </table>
+                </form>
+			<form action="{{ url_for('editprofile') }}" method="post" autocomplete="off">
+                <table>
+                    <tr>
+                        <td>Enter New Password</td>
+                        <td>
+                            <label for="password" title="Password" >
+                            </label>
+                            <input type="password" name="password" placeholder="New Password" id="password" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Enter New Email Id</td>
+                        <td>
+                            <label for="email" title="Email"></label>
+                            <input type="email" name="email" placeholder="New Email" id="email" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="msg">{{ msg }}</div>
+                            <input type="submit" value="Edit Profile">
+                        </td>
+                    </tr>
+                </table>
+			</form>
+</div>
+{% endblock %}
